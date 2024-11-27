@@ -16,10 +16,12 @@ export class AuthController {
         password: 'password',
         dateOfBirth: '2000-01-01',
         address: '123 Street',
+        role: 'customer',
       },
     },
   })
   async register(@Body() dto: any) {
+    console.log('details is', dto);
     return this.authService.register(dto);
   }
 

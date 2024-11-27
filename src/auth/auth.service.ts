@@ -17,12 +17,11 @@ export class AuthService {
 
   // Register a new customer
 
-  async register(dto: any, isAdmin = false): Promise<any> {
+  async register(dto: any): Promise<any> {
     const hashedPassword = await bcrypt.hash(dto.password, 10);
     const customer = new this.customerModel({
       ...dto,
       password: hashedPassword,
-      role: isAdmin ? 'admin' : 'customer',
     });
     const savedCustomer = await customer.save();
 

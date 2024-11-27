@@ -16,7 +16,7 @@ export class Customer {
 
   @Prop()
   dateOfBirth: Date;
-  @Prop({ default: 'customer', enum: ['customer', 'admin'] })
+  @Prop({ enum: ['customer', 'admin'] })
   role: string;
 
   @Prop()
